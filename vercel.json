@@ -1,0 +1,69 @@
+{
+  "cleanUrls": false,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/order",
+      "destination": "/order.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/go/2",
+      "destination": "https://www.trycolestzen.com/dtc?aff_id=4058",
+      "permanent": false
+    },
+    {
+      "source": "/go/3",
+      "destination": "https://www.trycolestzen.com/dtc?aff_id=4058",
+      "permanent": false
+    },
+    {
+      "source": "/go/6",
+      "destination": "https://www.trycolestzen.com/dtc?aff_id=4058",
+      "permanent": false
+    }
+  ],
+  "headers": [
+    {
+      "source": "/go/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    },
+    {
+      "source": "/order",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    },
+    {
+      "source": "/key.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/(css|js|img)/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000"
+        }
+      ]
+    }
+  ]
+}
